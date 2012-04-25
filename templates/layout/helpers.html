@@ -32,11 +32,11 @@
 </section>
 {%- endmacro %}
 
-{% macro search() -%}
-<form action="{{ url('innovate_search') }}" method="get">
-  <input type="text"
-         placeholder="SEARCH"
-         id="searchbox"
-         name="q">
+{% macro search(homepage=False) -%}
+<form action="{{ url('innovate_search') }}" method="get" id="searchform">
+  <label for="searchbox">{{ _('Search projects') }}</label>
+  <input type="text" id="searchbox" name="q"
+    {%- if not homepage %} placeholder="{{ _('Search projects') }}"{% endif -%}>
+  <button type="submit">{{ _('Search') }}</button>
 </form>
 {%- endmacro %}
