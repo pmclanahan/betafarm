@@ -1,4 +1,9 @@
 @import url('sandstone/sandstone.less');
+.hidden {
+    left: -9999px;
+    position: absolute;
+    top: 0;
+}
 a:visited {
     color: #9D72C4;
 }
@@ -166,8 +171,7 @@ html[xmlns] .clearfix {
 }
 #searchform {
     label, button {
-        position: absolute;
-        left: -9999px;
+        .hidden;
     }
 }
 .people, .relatedProjects {
